@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation Guide &mdash; regmon-doc 2023 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=a4664895"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to regmon-doc’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            regmon-doc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#container-based">Container-Based</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bare-metal">Bare Metal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-steps">Installation Steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#container-label">Container-Based</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-repository">1. Download Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-and-run">2. Build And Run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initial-configuration">3. Initial Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Bare Metal</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">regmon-doc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-guide">
+<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This guide is going to explain the installation routines of the regmon software.
+Please note that in order to go on with this guide several <a class="reference internal" href="#requirements-label"><span class="std std-ref">requirements</span></a> must be met in the first place.
+This essentially includes additional, preinstalled software (database and web server application) and hardware (e.g. server nodes which are hosted in a data center).
+If you are planning to use regmon in production we assume you have knowledge on how to setup and configure the hardware.
+The process of hosting and configuring a server instance so it becomes accessible for the outside world is beyond of this guide’s scope.
+Instead, we focus only on the installation process of the whole software package which is required in order to run regmon.
+In case you don’t have a dedicated server running and setup and you just want to try out regmon on your own, you can still install the software on your local machine by following this guide.</p>
+</section>
+<section id="requirements">
+<span id="requirements-label"></span><h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<p>As already introduced the requirements are only in scope of required software components.
+Which additional software needs to be installed depends on your chosen installation routine.
+As we will see in section <a class="reference internal" href="#installation-label"><span class="std std-ref">Installation Steps</span></a> in more detail there are two different installation routines.
+In this section we will list the required software for each routine.</p>
+<section id="container-based">
+<h3>Container-Based<a class="headerlink" href="#container-based" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Docker Desktop</p></li>
+</ul>
+</section>
+<section id="bare-metal">
+<h3>Bare Metal<a class="headerlink" href="#bare-metal" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Apache (2.4) or nginx or any other php-ready webserver</p></li>
+<li><dl class="simple">
+<dt>PHP (8.2)</dt><dd><ul>
+<li><p>with extensions mbstring, zip, zlib, mysqli, pdo_mysql</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>MySQL (5.7)</p></li>
+<li><dl class="simple">
+<dt>Additional PHP and JS libraries</dt><dd><ul>
+<li><p>Composer for installation of additional PHP libraries</p></li>
+<li><p>npm for installation of additional JS libraries</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Note that you don’t necessarily need the exact versions of the listed software packages.
+There’s a high chance that regmon will work with deviating versions (especially newer versions) but we cannot guarantee unless we haven’t tested out so far.</p>
+</section>
+</section>
+<section id="installation-steps">
+<span id="installation-label"></span><h2>Installation Steps<a class="headerlink" href="#installation-steps" title="Link to this heading"></a></h2>
+<p>There are two options for installing this project:
+using a Docker image (<a class="reference internal" href="#container-label"><span class="std std-ref">container-based installation</span></a>) or installing it directly into your web server’s document root (<a class="reference internal" href="#bare-metal-label"><span class="std std-ref">bare metal installation</span></a>).
+Choose your installation method depending on your specific requirements and preferences.
+In general we recommend opting for the container-based installation method, which only requires Docker Desktop to be installed on your web server.
+If you prefer to install on bare metal, please be mindful that discrepancies in the versions of installed software components may lead to potential issues.</p>
+<section id="container-label">
+<span id="id1"></span><h3>Container-Based<a class="headerlink" href="#container-label" title="Link to this heading"></a></h3>
+<p>Containers are isolated environments that run consistently across different systems.
+This makes it easy for us to ensure that regmon works reliable on your machine regardless of the operating system you use or the presence of any required software dependencies.
+Therefore we packaged our web application and its dependencies into a single, lightweight unit called a container which can be run on any system with a preinstalled containerization platform.
+For more information on containers we recommend the <a class="reference external" href="https://docs.docker.com/get-started/overview/">Docker overview</a> page.</p>
+<section id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h4>
+<p>In order to build and run containers on your system you will need a containerization platform to be installed.
+As we use Docker as our preferred platform, please download and install the latest version of Docker Desktop if you haven’t done already.
+You can install Docker on your own local machine if you just want to quickly test regmon on your own or install it on your server for production use.</p>
+</section>
+<section id="download-repository">
+<h4>1. Download Repository<a class="headerlink" href="#download-repository" title="Link to this heading"></a></h4>
+<p>For downloading the repository from github and copying it onto your system you have two options:</p>
+<p><strong>Using GIT</strong></p>
+<p>This step requires you to have GIT installed on your system. Open a terminal and change the directory to any place where you want regmon to be downloaded.
+After that use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/madnetdev/regmon-os.git<span class="w"> </span>regmon
+</pre></div>
+</div>
+<p>Then change the directory to the project root folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>regmon
+</pre></div>
+</div>
+<p><strong>Using ZIP File</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://github.com/madnetdev/regmon-os/">https://github.com/madnetdev/regmon-os/</a> and click on the <cite>Code</cite> Button.</p></li>
+<li><p>Then click <cite>Download ZIP</cite>.</p></li>
+<li><p>Extract the zipped files to any place you want.</p></li>
+<li><p>Change to the directory to the place you extracted the project and switch to the project root folder (which is the <cite>regmon</cite> folder)</p></li>
+</ol>
+</section>
+<section id="build-and-run">
+<h4>2. Build And Run<a class="headerlink" href="#build-and-run" title="Link to this heading"></a></h4>
+<p>In this step we build the container and run the process by the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;docker-compose-prod.yml&quot;</span><span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
+</pre></div>
+</div>
+<p>This command causes the container to be built in a way that it’s defined in the <cite>docker-compose-prod.yml</cite> file.
+The file mainly specifies every software dependency which is going to be needed by regmon.
+Note that the build process might need some time as dependencies are first going to be downloaded and then installed within it’s corresponding containers.</p>
+<p>If you are a software developer you might want to use the <cite>docker-compose-dev.yml</cite> file instead of <cite>docker-compose-prod.yml</cite> in conjunction with the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code> command.
+The first file specifies further software dependencies and configurations which are useful for software development.</p>
+<p>After the build process has finished you see regmon as a running process when typing <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">ls</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>ls
+</pre></div>
+</div>
+<p>The result of this command should look similar to the output below.
+It is important that the status is <cite>running</cite>, otherwise something went wrong during the build phase.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NAME                STATUS              CONFIG FILES
+regmon-os           running(3)          /home/user/projects/regmon/regmon-os/docker-compose-dev.yml
+</pre></div>
+</div>
+</section>
+<section id="initial-configuration">
+<h4>3. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Link to this heading"></a></h4>
+<p>When the containers have been successfully built and are in running state, the regmon web app will be accessible via <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a>.
+Keep in mind that this URL is only accessible if the container has been installed on your own local machine.
+If it has been installed on a remote server, you have to substitute localhost with your servers domain or IP address.</p>
+</section>
+</section>
+</section>
+<section id="id2">
+<h2>Bare Metal<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<span class="target" id="bare-metal-label"></span></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to regmon-doc’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kevin Bach, Christian Strotkoetter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
