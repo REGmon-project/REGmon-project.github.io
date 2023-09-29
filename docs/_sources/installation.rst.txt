@@ -1,3 +1,8 @@
+.. raw:: html
+
+   <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+
+
 Installation Guide
 ======================================
 
@@ -71,7 +76,7 @@ As we use Docker as our preferred platform, please download and install the late
 You can install Docker on your own local machine if you just want to quickly test regmon on your own or install it on your server for production use.
 
 
-1. Download Repository
+Download Repository
 ~~~~~~~~~~~~~~~~~~~~~~
 
 For downloading the repository from github and copying it onto your system you have two options:
@@ -98,7 +103,7 @@ Then change the directory to the project root folder.
 3. Extract the zipped files to any place you want.
 4. Change to the directory to the place you extracted the project and switch to the project root folder (which is the `regmon` folder)
 
-2. Build And Run
+Build And Run
 ~~~~~~~~~~~~~~~~~~~~~~
 In this step we build the container and run the process by the :literal:`docker compose` command.
 
@@ -113,7 +118,7 @@ Note that the build process might need some time as dependencies are first going
 If you are a software developer you might want to use the `docker-compose-dev.yml` file instead of `docker-compose-prod.yml` in conjunction with the :literal:`docker compose` command.
 The first file specifies further software dependencies and configurations which are useful for software development.
 
-After the build process has finished you see regmon as a running process when typing :literal:`docker compose ls`.
+After the build process has finished you see regmon as a running process by using the :literal:`ls` command of docker compose:
 
 .. code-block:: bash
 
@@ -127,18 +132,54 @@ It is important that the status is `running`, otherwise something went wrong dur
     NAME                STATUS              CONFIG FILES
     regmon-os           running(3)          /home/user/projects/regmon/regmon-os/docker-compose-dev.yml
 
-
-3. Initial Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~
 When the containers have been successfully built and are in running state, the regmon web app will be accessible via http://localhost:8000/.
 Keep in mind that this URL is only accessible if the container has been installed on your own local machine.
-If it has been installed on a remote server, you have to substitute localhost with your servers domain or IP address.
+If it has been installed on a remote server, you have to substitute localhost with your server's domain or IP address.
 
 
-
-
-
-===============
 Bare Metal
-===============
+----------------
 .. _bare-metal-label:
+
+
+
+==================
+Configuration
+==================
+Given that you have successfully installed regmon, you first need to configure the app.
+This only needs to be done after a fresh installation of the software.
+The process of configuration consists of three sequentially ordered parts which will be explained in the next subsections respectively. 
+
+
+DB Connection
+-------------------
+As we are following the container-based installation guide, a database with a pre-configured login has already been installed in a docker container.
+
+In either case your browser should offer a website like this:
+
+.. image:: assets/img/regmon_no_env.png
+    :alt: Initial Database Configuration
+
+On the left side you have to fill in the hostname, the name and the login credentials of the database.
+As we are following the container-based installation guide, a database with a pre-configured login has already been installed in a docker container.
+
+You can type in different credentials or settings for the database but note that these changes have to be done in the database software in advance.
+If you are unsure how to do this you can ignore this step and stick with the default settings, otherwise click on the green arrow to write the db settings into the regmon configuration (as displayed on the right side).
+
+In either case you should click on `Test Database Connection` afterwards to test if the credentials are correct and a connection to the database can be established. 
+The result should report a success message as displayed in the green box on the bottom.
+Continue with a click on the `SAVE ENV` button. 
+From now on Regmon knows how to connect to the database.
+
+.. image:: assets/img/regmon_empty_db.png
+    :alt: Initial Database Configuration
+
+Admin Login
+-------------------
+
+.. image:: assets/img/regmon_no_admin.png
+    :alt: Initial Database Configuration
+
+
+App Settings
+-------------------

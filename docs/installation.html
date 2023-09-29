@@ -53,14 +53,19 @@
 <li class="toctree-l2"><a class="reference internal" href="#installation-steps">Installation Steps</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#container-label">Container-Based</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#download-repository">1. Download Repository</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#build-and-run">2. Build And Run</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#initial-configuration">3. Initial Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-repository">Download Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-and-run">Build And Run</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Bare Metal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Bare Metal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#db-connection">DB Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#admin-login">Admin Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-settings">App Settings</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -89,7 +94,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="installation-guide">
+  <link rel="stylesheet" href="assets/css/styles.css" type="text/css"><section id="installation-guide">
 <h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
@@ -158,7 +163,7 @@ As we use Docker as our preferred platform, please download and install the late
 You can install Docker on your own local machine if you just want to quickly test regmon on your own or install it on your server for production use.</p>
 </section>
 <section id="download-repository">
-<h4>1. Download Repository<a class="headerlink" href="#download-repository" title="Link to this heading"></a></h4>
+<h4>Download Repository<a class="headerlink" href="#download-repository" title="Link to this heading"></a></h4>
 <p>For downloading the repository from github and copying it onto your system you have two options:</p>
 <p><strong>Using GIT</strong></p>
 <p>This step requires you to have GIT installed on your system. Open a terminal and change the directory to any place where you want regmon to be downloaded.
@@ -179,7 +184,7 @@ After that use the <code class="docutils literal notranslate"><span class="pre">
 </ol>
 </section>
 <section id="build-and-run">
-<h4>2. Build And Run<a class="headerlink" href="#build-and-run" title="Link to this heading"></a></h4>
+<h4>Build And Run<a class="headerlink" href="#build-and-run" title="Link to this heading"></a></h4>
 <p>In this step we build the container and run the process by the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code> command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;docker-compose-prod.yml&quot;</span><span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
 </pre></div>
@@ -189,7 +194,7 @@ The file mainly specifies every software dependency which is going to be needed 
 Note that the build process might need some time as dependencies are first going to be downloaded and then installed within it’s corresponding containers.</p>
 <p>If you are a software developer you might want to use the <cite>docker-compose-dev.yml</cite> file instead of <cite>docker-compose-prod.yml</cite> in conjunction with the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code> command.
 The first file specifies further software dependencies and configurations which are useful for software development.</p>
-<p>After the build process has finished you see regmon as a running process when typing <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">ls</span></code>.</p>
+<p>After the build process has finished you see regmon as a running process by using the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command of docker compose:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>ls
 </pre></div>
 </div>
@@ -199,18 +204,43 @@ It is important that the status is <cite>running</cite>, otherwise something wen
 regmon-os           running(3)          /home/user/projects/regmon/regmon-os/docker-compose-dev.yml
 </pre></div>
 </div>
-</section>
-<section id="initial-configuration">
-<h4>3. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Link to this heading"></a></h4>
 <p>When the containers have been successfully built and are in running state, the regmon web app will be accessible via <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a>.
 Keep in mind that this URL is only accessible if the container has been installed on your own local machine.
-If it has been installed on a remote server, you have to substitute localhost with your servers domain or IP address.</p>
-</section>
+If it has been installed on a remote server, you have to substitute localhost with your server’s domain or IP address.</p>
 </section>
 </section>
 <section id="id2">
-<h2>Bare Metal<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
-<span class="target" id="bare-metal-label"></span></section>
+<h3>Bare Metal<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="configuration">
+<span id="bare-metal-label"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>Given that you have successfully installed regmon, you first need to configure the app.
+This only needs to be done after a fresh installation of the software.
+The process of configuration consists of three sequentially ordered parts which will be explained in the next subsections respectively.</p>
+<section id="db-connection">
+<h3>DB Connection<a class="headerlink" href="#db-connection" title="Link to this heading"></a></h3>
+<p>As we are following the container-based installation guide, a database with a pre-configured login has already been installed in a docker container.</p>
+<p>In either case your browser should offer a website like this:</p>
+<img alt="Initial Database Configuration" src="_images/regmon_no_env.png" />
+<p>On the left side you have to fill in the hostname, the name and the login credentials of the database.
+As we are following the container-based installation guide, a database with a pre-configured login has already been installed in a docker container.</p>
+<p>You can type in different credentials or settings for the database but note that these changes have to be done in the database software in advance.
+If you are unsure how to do this you can ignore this step and stick with the default settings, otherwise click on the green arrow to write the db settings into the regmon configuration (as displayed on the right side).</p>
+<p>In either case you should click on <cite>Test Database Connection</cite> afterwards to test if the credentials are correct and a connection to the database can be established.
+The result should report a success message as displayed in the green box on the bottom.
+Continue with a click on the <cite>SAVE ENV</cite> button.
+From now on Regmon knows how to connect to the database.</p>
+<img alt="Initial Database Configuration" src="_images/regmon_empty_db.png" />
+</section>
+<section id="admin-login">
+<h3>Admin Login<a class="headerlink" href="#admin-login" title="Link to this heading"></a></h3>
+<img alt="Initial Database Configuration" src="_images/regmon_no_admin.png" />
+</section>
+<section id="app-settings">
+<h3>App Settings<a class="headerlink" href="#app-settings" title="Link to this heading"></a></h3>
+</section>
+</section>
 </section>
 
 
