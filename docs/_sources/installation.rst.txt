@@ -151,7 +151,7 @@ This only needs to be done after a fresh installation of the software.
 The process of configuration consists of three sequentially ordered parts which will be explained in the next subsections respectively. 
 
 
-DB Connection
+Database
 -------------------
 As we are following the container-based installation guide, a database with a pre-configured login has already been installed in a docker container.
 
@@ -171,6 +171,9 @@ The result should report a success message as displayed in the green box on the 
 Continue with a click on the `SAVE ENV` button. 
 From now on Regmon knows how to connect to the database.
 
+As the database is empty we have to migrate some predefined data.
+For this prupose we have a sql file from which we can import the bare minimum data into our database which is required tu run the app.
+The last step 
 .. image:: assets/img/regmon_empty_db.png
     :alt: Initial Database Configuration
 

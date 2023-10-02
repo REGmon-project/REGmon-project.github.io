@@ -17,9 +17,10 @@
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to regmon-doc’s documentation!" href="index.html" /> 
+    <link rel="prev" title="About REGmon" href="about.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,6 +44,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About REGmon</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
@@ -61,7 +63,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#db-connection">DB Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database">Database</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#admin-login">Admin Login</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#app-settings">App Settings</a></li>
 </ul>
@@ -218,8 +220,8 @@ If it has been installed on a remote server, you have to substitute localhost wi
 <p>Given that you have successfully installed regmon, you first need to configure the app.
 This only needs to be done after a fresh installation of the software.
 The process of configuration consists of three sequentially ordered parts which will be explained in the next subsections respectively.</p>
-<section id="db-connection">
-<h3>DB Connection<a class="headerlink" href="#db-connection" title="Link to this heading"></a></h3>
+<section id="database">
+<h3>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h3>
 <p>As we are following the container-based installation guide, a database with a pre-configured login has already been installed in a docker container.</p>
 <p>In either case your browser should offer a website like this:</p>
 <img alt="Initial Database Configuration" src="_images/regmon_no_env.png" />
@@ -231,7 +233,17 @@ If you are unsure how to do this you can ignore this step and stick with the def
 The result should report a success message as displayed in the green box on the bottom.
 Continue with a click on the <cite>SAVE ENV</cite> button.
 From now on Regmon knows how to connect to the database.</p>
-<img alt="Initial Database Configuration" src="_images/regmon_empty_db.png" />
+<p>As the database is empty we have to migrate some predefined data.
+For this prupose we have a sql file from which we can import the bare minimum data into our database which is required tu run the app.
+The last step
+.. image:: assets/img/regmon_empty_db.png</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">alt<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Initial Database Configuration</p>
+</dd>
+</dl>
+</div></blockquote>
 </section>
 <section id="admin-login">
 <h3>Admin Login<a class="headerlink" href="#admin-login" title="Link to this heading"></a></h3>
@@ -247,7 +259,7 @@ From now on Regmon knows how to connect to the database.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to regmon-doc’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="about.html" class="btn btn-neutral float-left" title="About REGmon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

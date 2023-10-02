@@ -10,6 +10,7 @@ Welcome to regmon-doc's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   about
    installation
 
 
