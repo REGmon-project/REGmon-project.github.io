@@ -9,10 +9,10 @@ Installation Guide
 ===============
 Introduction
 ===============
-This guide is going to explain the installation routines of the REGmon software. 
-Please note that in order to go on with this guide several :ref:`requirements <requirements-label>` must be met in the first place. 
+This guide is going to explain the installation routine of the REGmon software. 
+Please note that in order to go on with this guide, several :ref:`requirements <requirements-label>` must be met in the first place. 
 This essentially includes additional, preinstalled software (database and web server application) and hardware (e.g. server nodes which are hosted in a data center). 
-If you are planning to use REGmon in production we assume you have knowledge on how to setup and configure the hardware.
+If you are planning to use REGmon in production, we assume you have knowledge on how to setup and configure the hardware.
 The process of hosting and configuring a server instance so it becomes accessible for the outside world is beyond of this guide's scope. 
 Instead, we focus only on the installation process of the whole software package which is required in order to run REGmon.
 In case you don't have a dedicated server running and setup and you just want to try out REGmon on your own, you can still install the software on your local machine by following this guide.
