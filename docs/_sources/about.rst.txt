@@ -6,6 +6,8 @@
 About REGmon
 ======================================
 
+[still under construction]
+
 ===============
 What is REGmon
 ===============
@@ -16,16 +18,20 @@ Furthermore, REGmon can also be used by researchers to enable efficient and GDPR
 Features
 ----------------
 
-A lot of features.
+* monitor and analyze training processes
+* collect data through fully customizable forms
+* create templates to easily analyze data and get individual insights
+* visualize data using dashboards
+* set specific permission settings between athletes, coaches and staff
 
 License
 ----------------
 
 REGmon is licensed under the MIT license.
 
-===============
+=================
 Who needs REGmon?
-===============
+=================
 
 Practitioners
 ----------------
@@ -38,9 +44,9 @@ Researchers
 
 research projects, research software engineers, data managers
 
-===============
+============================
 History and Acknowledgements
-===============
+============================
 
 REGmon has been developed in and for the multicenter research program "Recovery Management in Elite Sport" (OSF project page, add link),
 which has been funded by the Federal Institute of Sport Science in Germany. Furthermore, we acknowledge the contribution from CEOS solution GmbH (Bochum, Germany) throughout the project.
