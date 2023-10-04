@@ -226,7 +226,7 @@ To get to the configuration page go to REGmon's index page (e.g. http://localhos
 Database
 -------------------
 The first part is about setting up the database connection and populating it with some essential data.
-This requires you to have an empty MySQ database setup and a user with corresponding access rights created which both will be ensured in the previous installation chapter.
+This requires you to have an empty MySQL database setup and a user with corresponding access rights created which both will be ensured in the previous installation chapter.
 
 Setup Connection
 ~~~~~~~~~~~~~~~~~~~~~~

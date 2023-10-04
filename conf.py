@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'regmon-doc'
-copyright = '2023, Kevin Bach, Christian Strotkoetter'
+project = 'REGmon Project'
+copyright = '2023, REGmon'
 author = 'Kevin Bach, Christian Strotkoetter'
 release = '2023'
 
