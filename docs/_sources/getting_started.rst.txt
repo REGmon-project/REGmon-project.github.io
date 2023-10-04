@@ -24,6 +24,7 @@ Preconfigured profiles
 If you decided to import sample data (`see section "Admin Login" <https://regmon-project.github.io/installation.html#admin-login>`_) there are several users profiles created besides the main admin profile. All of them have the initial password set the same as the password for the main admin profile.
 
 These are the preconfigured profiles:
+
 * "LocationAdmin" - user with the role "location admin"
 * "GroupAdmin" - user with the role "group admin"
 * "GroupAdmin2" - user with the role "group admin (reduced)"

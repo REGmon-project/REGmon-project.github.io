@@ -37,13 +37,16 @@ Who needs REGmon?
 Practitioners
 ----------------
 
-athletes, coaches and other staff
-
+* athletes
+* trainers / coaches
+* other staff (e.g. physiotherapists, nutritionists, etc.)
 
 Researchers
 ----------------
 
-research projects, research software engineers, data managers
+* research projects (data managers, researchers, etc.)
+* research software engineers
+* data scientists
 
 ============================
 History and Acknowledgements
