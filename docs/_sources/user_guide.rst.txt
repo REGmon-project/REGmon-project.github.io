@@ -3,7 +3,7 @@
    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
 
 
-Getting Started
+User Guide
 ======================================
 
 [under construction]
