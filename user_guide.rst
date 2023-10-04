@@ -16,14 +16,15 @@ Access REGmon
 ===============
 
 You can access REGmon by typing the URL of your REGmon instance into your browser.
-If REGmpon is initialized locally the default is ``localhost:8000``.
+If REGmon is initialized locally the default is ``localhost:8000``.
 If REGmon is set up on a web-server, you may access the web-application by typing the URL of your web-server adding the "Application Domain name" you have set during the installation process.
 
 ======================
 Preconfigured profiles
 ======================
 
-If you decided to import sample data (`see section "Admin Login" <https://regmon-project.github.io/installation.html#admin-login>`_) there are several users profiles created besides the main admin profile. All of them have the initial password set the same as the password for the main admin profile.
+If you decided to import sample data (`see section "Admin Login" <https://regmon-project.github.io/installation.html#admin-login>`_) there are several users profiles created besides the main admin profile.
+All of them have the initial password set the same as the password for the main admin profile.
 
 These are the preconfigured profiles:
 
