@@ -32,6 +32,9 @@ Container-Based
 ----------------
 - Docker Desktop
 
+
+.. _bare-metal-requirements-label:
+
 Bare Metal
 ----------------
 
@@ -88,7 +91,7 @@ After that use the :literal:`git clone` command.
 
 .. code-block:: bash
 
-   git clone https://github.com/madnetdev/regmon-os.git regmon
+   git clone https://github.com/REGmon-project/regmon.git regmon
 
 Then change the directory to the project root folder.
 
@@ -98,7 +101,7 @@ Then change the directory to the project root folder.
 
 **Using ZIP File**
     
-1. Go to https://github.com/madnetdev/regmon-os/ and click on the :emphasis:`Code` Button. 
+1. Go to https://github.com/REGmon-project/regmon and click on the :emphasis:`Code` Button. 
 2. Then click `Download ZIP`.  
 3. Extract the zipped files to any place you want.
 4. Change to the directory to the place you extracted the project and switch to the project root folder (which is the :emphasis:`regmon` folder)
@@ -147,13 +150,69 @@ This means that in MySQL there is already an empty database called :emphasis:`re
 When the containers have been successfully built and are in running state, the REGmon web app will be accessible via http://localhost:8000/.
 Keep in mind that this URL is only accessible if the container has been installed on your own local machine.
 If it has been installed on a remote server, you have to substitute localhost with your server's domain or IP address.
-The same applies for the phpmyadmin url which is on default accessible on http://localhost:8888/.
+The same applies for the phpmyadmin url which is on default accessible via http://localhost:8888/.
 
 Bare Metal
 ----------------
 .. _bare-metal-label:
 
-Right now under construction
+Installing on bare metal means installing software directly on your system without any virtualized environment in between.
+For continuing with this routine make sure you you fulfill the :ref:`requirements <bare-metal-requirements-label>`.
+
+Download Repository
+~~~~~~~~~~~~~~~~~~~~~~
+
+For downloading the repository from github and copying it onto your system you have two options:
+
+**Using GIT**
+
+This step requires you to have GIT installed on your system. Open a terminal and change the DOCUMENT_ROOT directory of your web server.
+After that use the :literal:`git clone` command.
+
+.. code-block:: bash
+
+   git clone https://github.com/REGmon-project/regmon.git regmon
+
+Then change the directory to the project root folder.
+
+.. code-block:: bash
+    
+    cd regmon
+
+**Using ZIP File**
+    
+1. Go to https://github.com/REGmon-project/regmon and click on the :emphasis:`Code` Button. 
+2. Then click `Download ZIP`.  
+3. Extract the zipped files to the DOCUMENT_ROOT directory of your web server.
+4. Change to the directory to the place you extracted the project and switch to DOCUMENT_ROOT/regmon
+
+Install Dependencies
+~~~~~~~~~~~~~~~~~~~~~~
+You can install PHP and JavaScript dependencies conveniently by using the package managers composer and npm.
+Every dependency for PHP is listed in composer.json and for JavaScript in package.json.
+
+You can use the package manager for php by typing:
+
+.. code-block:: bash
+
+   composer install
+
+and for JavaScript:
+
+.. code-block:: bash
+
+   npm install
+
+Alternatively you can use the files **"extra/_vendor.zip"** and **"extra/_node_modules.zip"** and extract them to the top level directory of regmon.
+
+
+Setup Database
+~~~~~~~~~~~~~~~~~~~~~~
+In your installed database application create a new database called regmondb and a user with sufficient read and write privileges.
+Depending on your chosen database application the steps my differ. 
+After this step you can head to the configuration part of this guide.
+
+
 
 
 ==================
@@ -208,7 +267,15 @@ If you prefer a clean installation click on :emphasis:`NO`, otherwise go to the 
 App Settings
 -------------------
 In the last step you have to configure the webapp itself.
-For the most settings available we advise you to stick with the default settings provides by us.
+For the most settings available we advise you to stick with the default settings provided by us.
 Otherwise changes can be made but we expect you to have appropriate knowledge regarding web-based technologies.
 
 What certainly needs to be configured is the Email Configuration part.
+A correct email configuration allows REGmon to send emails which becomes important when new users want to register and get an Email sent back with an activation link.
+For this purpose type in the hostname and the port of your chosen SMTP Server as well as the corresponding credentials. 
+The other fields define how Emails will be displayed to the addressee.
+
+To finish the configuration just click on :emphasis:`SAVE CONFIGURATION` which will lead you to the login page of REGmon.
+Congratulations, you successfully installed REGmon! 
+If you want to make any configuration changes in the future you can do it by logging in as an admin and click on the gear icon.
+

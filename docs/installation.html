@@ -20,6 +20,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
     <link rel="prev" title="About REGmon" href="about.html" /> 
 </head>
 
@@ -59,7 +60,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#build-and-run">Build And Run</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Bare Metal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Bare Metal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Download Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-dependencies">Install Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-database">Setup Database</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
@@ -74,6 +80,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 </ul>
 
         </div>
@@ -125,7 +132,7 @@ In this section we will list the required software for each routine.</p>
 </ul>
 </section>
 <section id="bare-metal">
-<h3>Bare Metal<a class="headerlink" href="#bare-metal" title="Link to this heading"></a></h3>
+<span id="bare-metal-requirements-label"></span><h3>Bare Metal<a class="headerlink" href="#bare-metal" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Apache (2.4) or nginx or any other php-ready webserver</p></li>
 <li><dl class="simple">
@@ -175,7 +182,7 @@ You can install Docker on your own local machine if you just want to quickly tes
 <p><strong>Using GIT</strong></p>
 <p>This step requires you to have GIT installed on your system. Open a terminal and change the directory to any place where you want REGmon to be downloaded.
 After that use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/madnetdev/regmon-os.git<span class="w"> </span>regmon
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/REGmon-project/regmon.git<span class="w"> </span>regmon
 </pre></div>
 </div>
 <p>Then change the directory to the project root folder.</p>
@@ -184,7 +191,7 @@ After that use the <code class="docutils literal notranslate"><span class="pre">
 </div>
 <p><strong>Using ZIP File</strong></p>
 <ol class="arabic simple">
-<li><p>Go to <a class="reference external" href="https://github.com/madnetdev/regmon-os/">https://github.com/madnetdev/regmon-os/</a> and click on the <em>Code</em> Button.</p></li>
+<li><p>Go to <a class="reference external" href="https://github.com/REGmon-project/regmon">https://github.com/REGmon-project/regmon</a> and click on the <em>Code</em> Button.</p></li>
 <li><p>Then click <cite>Download ZIP</cite>.</p></li>
 <li><p>Extract the zipped files to any place you want.</p></li>
 <li><p>Change to the directory to the place you extracted the project and switch to the project root folder (which is the <em>regmon</em> folder)</p></li>
@@ -223,12 +230,54 @@ This means that in MySQL there is already an empty database called <em>regmondb<
 <p>When the containers have been successfully built and are in running state, the REGmon web app will be accessible via <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a>.
 Keep in mind that this URL is only accessible if the container has been installed on your own local machine.
 If it has been installed on a remote server, you have to substitute localhost with your server’s domain or IP address.
-The same applies for the phpmyadmin url which is on default accessible on <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a>.</p>
+The same applies for the phpmyadmin url which is on default accessible via <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a>.</p>
 </section>
 </section>
 <section id="id2">
 <h3>Bare Metal<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
-<p id="bare-metal-label">Right now under construction</p>
+<p id="bare-metal-label">Installing on bare metal means installing software directly on your system without any virtualized environment in between.
+For continuing with this routine make sure you you fulfill the <a class="reference internal" href="#bare-metal-requirements-label"><span class="std std-ref">requirements</span></a>.</p>
+<section id="id3">
+<h4>Download Repository<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>For downloading the repository from github and copying it onto your system you have two options:</p>
+<p><strong>Using GIT</strong></p>
+<p>This step requires you to have GIT installed on your system. Open a terminal and change the DOCUMENT_ROOT directory of your web server.
+After that use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/REGmon-project/regmon.git<span class="w"> </span>regmon
+</pre></div>
+</div>
+<p>Then change the directory to the project root folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>regmon
+</pre></div>
+</div>
+<p><strong>Using ZIP File</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://github.com/REGmon-project/regmon">https://github.com/REGmon-project/regmon</a> and click on the <em>Code</em> Button.</p></li>
+<li><p>Then click <cite>Download ZIP</cite>.</p></li>
+<li><p>Extract the zipped files to the DOCUMENT_ROOT directory of your web server.</p></li>
+<li><p>Change to the directory to the place you extracted the project and switch to DOCUMENT_ROOT/regmon</p></li>
+</ol>
+</section>
+<section id="install-dependencies">
+<h4>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading"></a></h4>
+<p>You can install PHP and JavaScript dependencies conveniently by using the package managers composer and npm.
+Every dependency for PHP is listed in composer.json and for JavaScript in package.json.</p>
+<p>You can use the package manager for php by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>install
+</pre></div>
+</div>
+<p>and for JavaScript:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install
+</pre></div>
+</div>
+<p>Alternatively you can use the files <strong>“extra/_vendor.zip”</strong> and <strong>“extra/_node_modules.zip”</strong> and extract them to the top level directory of regmon.</p>
+</section>
+<section id="setup-database">
+<h4>Setup Database<a class="headerlink" href="#setup-database" title="Link to this heading"></a></h4>
+<p>In your installed database application create a new database called regmondb and a user with sufficient read and write privileges.
+Depending on your chosen database application the steps my differ.
+After this step you can head to the configuration part of this guide.</p>
+</section>
 </section>
 </section>
 <section id="configuration">
@@ -272,9 +321,15 @@ If you prefer a clean installation click on <em>NO</em>, otherwise go to the nex
 <section id="app-settings">
 <h3>App Settings<a class="headerlink" href="#app-settings" title="Link to this heading"></a></h3>
 <p>In the last step you have to configure the webapp itself.
-For the most settings available we advise you to stick with the default settings provides by us.
+For the most settings available we advise you to stick with the default settings provided by us.
 Otherwise changes can be made but we expect you to have appropriate knowledge regarding web-based technologies.</p>
-<p>What certainly needs to be configured is the Email Configuration part.</p>
+<p>What certainly needs to be configured is the Email Configuration part.
+A correct email configuration allows REGmon to send emails which becomes important when new users want to register and get an Email sent back with an activation link.
+For this purpose type in the hostname and the port of your chosen SMTP Server as well as the corresponding credentials.
+The other fields define how Emails will be displayed to the addressee.</p>
+<p>To finish the configuration just click on <em>SAVE CONFIGURATION</em> which will lead you to the login page of REGmon.
+Congratulations, you successfully installed REGmon!
+If you want to make any configuration changes in the future you can do it by logging in as an admin and click on the gear icon.</p>
 </section>
 </section>
 </section>
@@ -284,6 +339,7 @@ Otherwise changes can be made but we expect you to have appropriate knowledge re
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="about.html" class="btn btn-neutral float-left" title="About REGmon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
