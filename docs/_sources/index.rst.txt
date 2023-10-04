@@ -12,6 +12,7 @@ Welcome to regmon-doc's documentation!
 
    about
    installation
+   getting_started
 
 
 

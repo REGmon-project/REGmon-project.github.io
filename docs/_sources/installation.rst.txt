@@ -150,7 +150,7 @@ This means that in MySQL there is already an empty database called :emphasis:`re
 When the containers have been successfully built and are in running state, the REGmon web app will be accessible via http://localhost:8000/.
 Keep in mind that this URL is only accessible if the container has been installed on your own local machine.
 If it has been installed on a remote server, you have to substitute localhost with your server's domain or IP address.
-The same applies for the phpmyadmin url which is on default accessible on http://localhost:8888/.
+The same applies for the phpmyadmin url which is on default accessible via http://localhost:8888/.
 
 Bare Metal
 ----------------
