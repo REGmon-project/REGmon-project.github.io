@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to the REGmon Open Source Project!
-======================================
+==========================================
 
 .. toctree::
    :maxdepth: 2

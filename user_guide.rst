@@ -17,7 +17,7 @@ Access REGmon
 
 You can access REGmon by typing the URL of your REGmon instance into your browser.
 If REGmon is initialized locally the default is ``localhost:8000``.
-If REGmon is set up on a web-server, you may access the web-application by typing the URL of your web-server adding the "Application Domain name" you have set during the installation process.
+If REGmon is set up on a web-server, you may access the web application by typing the URL of your web server adding the "Application Domain name" you have set during the installation process.
 
 ======================
 Preconfigured profiles
@@ -31,6 +31,6 @@ These are the preconfigured profiles:
 * "LocationAdmin" - user with the role "location admin"
 * "GroupAdmin" - user with the role "group admin"
 * "GroupAdmin2" - user with the role "group admin (reduced)"
-* "Trainer1" - user with the role "trainer"
+* "Coach1" - user with the role "coach"
 * "Athlete1" - a first user with the role "athlete"
 * "Athlete2" - a second user with the role "athlete"

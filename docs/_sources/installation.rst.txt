@@ -38,7 +38,7 @@ Container-Based
 Bare Metal
 ----------------
 
-* Apache (2.4) or nginx or any other php-ready webserver
+* Apache (2.4) or nginx or any other php-ready web server
 * PHP (8.2)
     * with extensions mbstring, zip, zlib, mysqli, pdo_mysql
 * MySQL (5.7)
@@ -82,7 +82,7 @@ You can install Docker on your own local machine if you just want to quickly tes
 Download Repository
 ~~~~~~~~~~~~~~~~~~~~~~
 
-For downloading the repository from github and copying it onto your system you have two options:
+For downloading the repository from GitHub and copying it onto your system you have two options:
 
 **Using GIT**
 
@@ -162,7 +162,7 @@ For continuing with this routine make sure you you fulfill the :ref:`requirement
 Download Repository
 ~~~~~~~~~~~~~~~~~~~~~~
 
-For downloading the repository from github and copying it onto your system you have two options:
+For downloading the repository from GitHub and copying it onto your system you have two options:
 
 **Using GIT**
 
